@@ -5,13 +5,12 @@
 
 # change 'tests => 2' to 'tests => last_test_to_print';
 
-use Test;
-BEGIN { plan tests => 2 };
-use MusicBrainz::Queries;
-ok(1); # If we made it this far, we're ok.
+use strict;
+use Test::More tests => 2;
+BEGIN { use_ok('MusicBrainz::Queries', qw(:all)) };
 
 
-my $fail;
+my $fail = 0;
 foreach my $constname (qw(
 	MBE_AlbumGetAlbumArtistId MBE_AlbumGetAlbumId MBE_AlbumGetAlbumName
 	MBE_AlbumGetAlbumStatus MBE_AlbumGetAlbumType MBE_AlbumGetArtistId
@@ -47,15 +46,12 @@ foreach my $constname (qw(
     print "# pass: $@";
   } else {
     print "# fail: $@";
-    $fail = 1;    
+    $fail = 1;
   }
-}
-if ($fail) {
-  print "not ok 2\n";
-} else {
-  print "ok 2\n";
+
 }
 
+ok( $fail == 0 , 'Constants' );
 #########################
 
 # Insert your test code below, the Test::More module is use()ed here so read

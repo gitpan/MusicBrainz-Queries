@@ -1,6 +1,6 @@
 package MusicBrainz::Queries;
 
-# $Id: Queries.pm,v 1.3 2003/02/21 08:45:21 sander Exp $
+# $Id: Queries.pm,v 1.5 2003/02/24 23:41:51 sander Exp $
 
 use 5.6.1;
 use strict;
@@ -109,95 +109,9 @@ our %EXPORT_TAGS = ( 'all' => [ qw(
 
 our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 
-our @EXPORT = qw(
-	MBE_AlbumGetAlbumArtistId
-	MBE_AlbumGetAlbumId
-	MBE_AlbumGetAlbumName
-	MBE_AlbumGetAlbumStatus
-	MBE_AlbumGetAlbumType
-	MBE_AlbumGetArtistId
-	MBE_AlbumGetArtistName
-	MBE_AlbumGetArtistSortName
-	MBE_AlbumGetNumCdindexIds
-	MBE_AlbumGetNumTracks
-	MBE_AlbumGetTrackDuration
-	MBE_AlbumGetTrackId
-	MBE_AlbumGetTrackList
-	MBE_AlbumGetTrackName
-	MBE_AlbumGetTrackNum
-	MBE_ArtistGetAlbumId
-	MBE_ArtistGetAlbumName
-	MBE_ArtistGetArtistId
-	MBE_ArtistGetArtistName
-	MBE_ArtistGetArtistSortName
-	MBE_AuthGetChallenge
-	MBE_AuthGetSessionId
-	MBE_GetError
-	MBE_GetNumAlbums
-	MBE_GetNumArtists
-	MBE_GetNumLookupResults
-	MBE_GetNumTracks
-	MBE_GetNumTrmids
-	MBE_GetStatus
-	MBE_LookupGetAlbumId
-	MBE_LookupGetArtistId
-	MBE_LookupGetRelevance
-	MBE_LookupGetTrackId
-	MBE_LookupGetType
-	MBE_QuerySubject
-	MBE_QuickGetAlbumName
-	MBE_QuickGetArtistName
-	MBE_QuickGetTrackDuration
-	MBE_QuickGetTrackId
-	MBE_QuickGetTrackName
-	MBE_QuickGetTrackNum
-	MBE_TOCGetCDIndexId
-	MBE_TOCGetFirstTrack
-	MBE_TOCGetLastTrack
-	MBE_TOCGetTrackNumSectors
-	MBE_TOCGetTrackSectorOffset
-	MBE_TrackGetArtistId
-	MBE_TrackGetArtistName
-	MBE_TrackGetArtistSortName
-	MBE_TrackGetTrackDuration
-	MBE_TrackGetTrackId
-	MBE_TrackGetTrackName
-	MBE_TrackGetTrackNum
-	MBI_VARIOUS_ARTIST_ID
-	MBQ_AssociateCD
-	MBQ_Authenticate
-	MBQ_FileInfoLookup
-	MBQ_FindAlbumByName
-	MBQ_FindArtistByName
-	MBQ_FindDistinctTRMId
-	MBQ_FindTrackByName
-	MBQ_GetAlbumById
-	MBQ_GetArtistById
-	MBQ_GetCDInfo
-	MBQ_GetCDInfoFromCDIndexId
-	MBQ_GetCDTOC
-	MBQ_GetTrackById
-	MBQ_GetTrackByTRMId
-	MBQ_QuickTrackInfoFromTrackId
-	MBQ_SubmitTrack
-	MBQ_SubmitTrackTRMId
-	MBQ_TrackInfoFromTRMId
-	MBS_Back
-	MBS_Rewind
-	MBS_SelectAlbum
-	MBS_SelectArtist
-	MBS_SelectCdindexid
-	MBS_SelectLookupResult
-	MBS_SelectLookupResultAlbum
-	MBS_SelectLookupResultArtist
-	MBS_SelectLookupResultTrack
-	MBS_SelectTrack
-	MBS_SelectTrackAlbum
-	MBS_SelectTrackArtist
-	MBS_SelectTrmid
-);
+our @EXPORT = qw();
 
-our $VERSION = do { my @r = (q$Revision: 1.3 $ =~ /\d+/g); $r[0]--;sprintf "%d."."%02d" x $#r, @r }; # must be all one line, for MakeMaker  
+our $VERSION = do { my @r = (q$Revision: 1.5 $ =~ /\d+/g); $r[0]--;sprintf "%d."."%02d" x $#r, @r }; # must be all one line, for MakeMaker  
 
 sub AUTOLOAD {
     # This AUTOLOAD is used to 'autoload' constants from the constant()
@@ -243,9 +157,9 @@ MusicBrainz::Queries - MusicBrainz RDF Query Constants
 
 =head1 DESCRIPTION
 
-Stub documentation for MusicBrainz::Queries, created by h2xs. It looks like the
-author of the extension was negligent enough to leave the stub
-unedited.
+This module is used to provide access to the RDF Query Constants
+used by the MusicBrainz::Client module for querying the MusicBrainz
+server.
 
 =head2 EXPORT
 
@@ -262,23 +176,23 @@ id for the Various Artists' artist, and then you should check the artist for
 each track of the album seperately with MBE_AlbumGetArtistName, 
 MBE_AlbumGetArtistSortName and MBE_AlbumGetArtistId.
 
-=item=item  MBE_AlbumGetAlbumId
+=item  MBE_AlbumGetAlbumId
 
 Return the ID of the currently selected Album.
 
-=item=item  MBE_AlbumGetAlbumName
+=item  MBE_AlbumGetAlbumName
 
 Return the name of the currently selected Album.
 
-=item=item  MBE_AlbumGetAlbumStatus
-
+=item  MBE_AlbumGetAlbumStatus
+ 
 Return the release status of the currently selected Album.
 
 =item MBE_AlbumGetAlbumType
 
 Return the release type of the currently selected Album.
 
-=item=item  MBE_AlbumGetArtistId
+=item MBE_AlbumGetArtistId
 
 Return the artist Id of the nth track in the album. Requires a 
 track index ordinal. 1 for the first track, etc...
