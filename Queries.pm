@@ -1,8 +1,8 @@
 package MusicBrainz::Queries;
 
-# $Id: Queries.pm,v 1.5 2003/02/24 23:41:51 sander Exp $
+# $Id: Queries.pm,v 1.6 2003/04/17 19:13:09 sander Exp $
 
-use 5.6.1;
+use 5.006_001; 
 use strict;
 use warnings;
 use Carp;
@@ -111,7 +111,7 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 
 our @EXPORT = qw();
 
-our $VERSION = do { my @r = (q$Revision: 1.5 $ =~ /\d+/g); $r[0]--;sprintf "%d."."%02d" x $#r, @r }; # must be all one line, for MakeMaker  
+our $VERSION = do { my @r = (q$Revision: 1.6 $ =~ /\d+/g); $r[0]--;sprintf "%d."."%02d" x $#r, @r }; # must be all one line, for MakeMaker  
 
 sub AUTOLOAD {
     # This AUTOLOAD is used to 'autoload' constants from the constant()
