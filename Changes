@@ -3,7 +3,11 @@ Revision history for Perl extension MusicBrainz::Queries.
 All changes by Sander van Zoest <svanzoest@cpan.org> unless 
 otherwise noted.
 
-$Id: Changes,v 1.12 2004/06/17 22:42:22 sander Exp $
+$Id: Changes,v 1.13 2005/04/25 10:30:00 sander Exp $
+
+0.08 Mon Apr 25 10:25:34 2005
+	- removed query no longer available. [Matthias Friedrich]
+              MBE_AlbumGetAmazonCoverartURL
 
 0.07 Thu Jun 17 20:03:19 2004
 	- actually expose libmusicbrainz 2.1.1 queries.
