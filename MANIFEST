@@ -1,12 +1,8 @@
-# $Id: MANIFEST,v 1.2 2004/06/17 22:42:22 sander Exp $
 Changes
-Makefile.PL
 MANIFEST
+META.yml			Module meta-data (added by MakeMaker)
 ppport.h
 Queries.pm
 Queries.xs
 README
 t/1.t
-fallback/const-c.inc
-fallback/const-xs.inc
-META.yml                                 Module meta-data (added by MakeMaker)
