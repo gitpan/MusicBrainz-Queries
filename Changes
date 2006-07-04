@@ -3,9 +3,12 @@ Revision history for Perl extension MusicBrainz::Queries.
 All changes by Sander van Zoest <svanzoest@cpan.org> unless 
 otherwise noted.
 
-$Id: Changes 8062 2006-07-03 22:39:35Z svanzoest $
+$Id: Changes 8095 2006-07-04 19:45:43Z svanzoest $
 
-0.10	Mon Jul  3 22:32:03 2006
+0.11  Tue Jul  4 19:44:17 2006
+	- fixed missing files from MANIFEST including Makefile.PL
+
+0.10  [retracted]
 	- adjusted for migration from CVS to Subversion
         - updated to libmusicbrainz 2.1.3 [luks]
         - added new queries:
@@ -15,7 +18,7 @@ $Id: Changes 8062 2006-07-03 22:39:35Z svanzoest $
 	      MBE_GetRelationshipAttribute
 	      MBS_SelectAlbumArtist
 
-0.09	Fri Nov 11 08:59:07 2005
+0.09  Fri Nov 11 08:59:07 2005
         - updated to libmusicbrainz 2.1.2
         - added new relationship queries:
   	      MBS_SelectRelationship
@@ -32,11 +35,11 @@ $Id: Changes 8062 2006-07-03 22:39:35Z svanzoest $
               MBQ_GetAlbumRelationsById
               MBQ_GetTrackRelationsById
 
-0.08 Mon Apr 25 10:25:34 2005
+0.08  Mon Apr 25 10:25:34 2005
 	- removed query no longer available. [Matthias Friedrich]
               MBE_AlbumGetAmazonCoverartURL
 
-0.07 Thu Jun 17 20:03:19 2004
+0.07  Thu Jun 17 20:03:19 2004
 	- actually expose libmusicbrainz 2.1.1 queries.
 	- added the new queries to documentation:
               MBE_AlbumGetAmazonAsin
